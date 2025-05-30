@@ -1,10 +1,11 @@
 
 import api from '../../services/api'
 import { useRef } from 'react'
-
-import { Container, ToBackground, Form, Title, Input, ContainerInput, Button, InputLabel } from './style';
-
+import { Container, ToBackground, Form, Title, Input, ContainerInput, InputLabel } from './style';
 import UsersImage from '../../assets/users.png';
+import Button from '../../components/Button';
+
+
 
 function Home() {
   const inputName = useRef();
@@ -46,7 +47,7 @@ function Home() {
           <Input type='email' placeholder='Email' ref={inputEmail} />
         </div>
 
-        <Button type='button' onClick={registerNewUser}>Cadastrar Usuários</Button>
+        <Button type='button' onClick={registerNewUser}> Cadastrar Usuários </Button>
 
       </Form>
     </Container>
