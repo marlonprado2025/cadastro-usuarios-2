@@ -11,12 +11,13 @@ function Home() {
   const inputAge = useRef();
   const inputEmail = useRef();
 
-  async function registerUser() {
-   await api.post('/users', {
+  async function registerNewUser() {
+   const data = await api.post('/usuarios', {
       name: inputName.current.value,
-      age: inputAge.current.value,
+      age: parseInt(inputAge.current.value),//usada para converter uma string em um número inteiro.
       email: inputEmail.current.value
     })
+    console.log(data)
   }
 
   return (
@@ -45,7 +46,7 @@ function Home() {
           <Input type='email' placeholder='Email' ref={inputEmail} />
         </div>
 
-        <Button type='button' onClick={registerUser}>Cadastrar Usuários</Button>
+        <Button type='button' onClick={registerNewUser}>Cadastrar Usuários</Button>
 
       </Form>
     </Container>
